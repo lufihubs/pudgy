@@ -496,7 +496,6 @@
               <img src="/logo.jpg" alt="$PUDGY Logo">
               <span>$PUDGY</span>
             </div>
-            <p>The cutest memecoin on Base<br>with a mission for clean water.</p>
             
             <div class="footer-socials">
               <a href="#" class="social-btn" title="Twitter">
@@ -551,26 +550,38 @@
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const navLinks = document.getElementById('nav-links');
       
-      mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-open');
-        mobileMenuBtn.classList.toggle('active');
-      });
-      
-      // Close menu when clicking on a link
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('mobile-open');
-          mobileMenuBtn.classList.remove('active');
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          navLinks.classList.toggle('mobile-open');
+          mobileMenuBtn.classList.toggle('active');
         });
-      });
-      
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('.navbar')) {
-          navLinks.classList.remove('mobile-open');
-          mobileMenuBtn.classList.remove('active');
-        }
-      });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.navbar')) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          }
+        });
+      }
     </script>
   </body>
 </html>
