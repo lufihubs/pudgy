@@ -122,6 +122,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        color: #666666;
       }
       
       .copy-btn {
@@ -138,6 +139,65 @@
       .copy-btn:hover {
         background: #0241d4;
         transform: translateY(-1px);
+      }
+      
+      .wallet-qr {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      
+      .qr-code {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 2px solid #0352f9;
+        box-shadow: 0 4px 15px rgba(3, 82, 249, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .qr-code:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(3, 82, 249, 0.3);
+      }
+      
+      .qr-label {
+        margin-top: 10px;
+        color: #0352f9;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      .empty-state {
+        text-align: center;
+        padding: 40px 20px;
+        color: #666666;
+      }
+      
+      .empty-state i {
+        font-size: 3rem;
+        color: #666666;
+        margin-bottom: 20px;
+        display: block;
+      }
+      
+      .empty-state h3 {
+        color: #666666;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+      
+      .empty-state p {
+        color: #666666;
+        margin-bottom: 8px;
+      }
+      
+      .empty-state .empty-subtitle {
+        color: #999999;
+        font-size: 0.9rem;
+        font-style: italic;
       }
       
       .wallet-stats {
@@ -524,6 +584,11 @@
               </button>
             </div>
             
+            <div class="wallet-qr">
+              <img src="/qr.jpg" alt="Wallet QR Code" class="qr-code">
+              <p class="qr-label">Scan to Donate</p>
+            </div>
+            
             <div class="wallet-stats">
               <div class="wallet-stat">
                 <div class="wallet-stat-value" id="eth-balance">Loading...</div>
@@ -557,49 +622,11 @@
             </h2>
             
             <div id="donators-list">
-              <div class="donator-item">
-                <div class="donator-rank gold">1</div>
-                <div class="donator-info">
-                  <div class="donator-name">PudgyWhale.base</div>
-                  <div class="donator-amount">$50,000</div>
-                  <div class="donator-wells">10 Wells Funded</div>
-                </div>
-              </div>
-              
-              <div class="donator-item">
-                <div class="donator-rank silver">2</div>
-                <div class="donator-info">
-                  <div class="donator-name">CryptoPhilanthropist</div>
-                  <div class="donator-amount">$25,000</div>
-                  <div class="donator-wells">5 Wells Funded</div>
-                </div>
-              </div>
-              
-              <div class="donator-item">
-                <div class="donator-rank bronze">3</div>
-                <div class="donator-info">
-                  <div class="donator-name">WaterHero2024</div>
-                  <div class="donator-amount">$15,000</div>
-                  <div class="donator-wells">3 Wells Funded</div>
-                </div>
-              </div>
-              
-              <div class="donator-item">
-                <div class="donator-rank">4</div>
-                <div class="donator-info">
-                  <div class="donator-name">BaseBuilder.eth</div>
-                  <div class="donator-amount">$10,000</div>
-                  <div class="donator-wells">2 Wells Funded</div>
-                </div>
-              </div>
-              
-              <div class="donator-item">
-                <div class="donator-rank">5</div>
-                <div class="donator-info">
-                  <div class="donator-name">MoonMission2024</div>
-                  <div class="donator-amount">$8,500</div>
-                  <div class="donator-wells">1 Well Funded</div>
-                </div>
+              <div class="empty-state">
+                <i class="fas fa-heart"></i>
+                <h3>No Contributors Yet</h3>
+                <p>Be the first to support our clean water mission!</p>
+                <p class="empty-subtitle">All donations will be tracked and displayed here</p>
               </div>
             </div>
           </div>
