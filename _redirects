@@ -1,0 +1,8 @@
+# Netlify redirects file
+# Handle direct navigation to HTML pages
+/donation-tracker    /donation-tracker.html    200
+/leaderboard        /leaderboard.html         200
+/impact-reports     /impact-reports.html      200
+
+# Handle SPA routing fallback
+/*    /index.html   200
