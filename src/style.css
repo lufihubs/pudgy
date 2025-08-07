@@ -47,8 +47,8 @@ body {
 }
 
 .hero-container {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
   position: relative;
@@ -57,18 +57,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: left !important;
 }
 
 .hero-content {
   animation: fadeInUp 1s ease-out;
-  grid-column: 1 !important;
-  order: 1 !important;
-}
-
-.hero-visual {
-  grid-column: 2 !important;
-  order: 2 !important;
 }
 
 .hero-title {
@@ -718,24 +710,6 @@ section {
   }
 }
 
-/* Desktop layout enforcement */
-@media (min-width: 769px) {
-  .hero-container {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 4rem;
-    text-align: left;
-  }
-  
-  .hero-content {
-    order: 1;
-  }
-  
-  .hero-visual {
-    order: 2;
-  }
-}
-
-@media (max-width: 768px) {
   .hero-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -776,7 +750,7 @@ section {
     width: 250px;
     height: 250px;
   }
-}
+  
   /* Mobile MrBeast Image */
   .mrbeast-image {
     position: relative;
