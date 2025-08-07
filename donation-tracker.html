@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/style.css?v=1.0.4">
+    <link rel="stylesheet" href="./src/style.css?v=1.0.5">
     <style>
       /* Donation Tracker Specific Styles */
       .donation-tracker {
@@ -425,15 +425,8 @@
     <!-- Fixed Navigation -->
     <nav class="navbar">
       <div class="container">
-        <!-- Mobile menu button -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        
         <!-- Navigation links -->
-        <div class="nav-links" id="nav-links">
+        <div class="nav-links">
           <a href="index.html" class="nav-link">
             <i class="fas fa-home"></i>
             <span>Home</span>
@@ -595,51 +588,6 @@
       </div>
     </section>
 
-    <!-- Mobile Menu Script -->
-    <script>
-      // Mobile menu toggle (same as other pages)
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const navLinks = document.getElementById('nav-links');
-      
-      if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          navLinks.classList.toggle('mobile-open');
-          mobileMenuBtn.classList.toggle('active');
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          });
-        });
-        
-        document.addEventListener('click', (e) => {
-          if (!e.target.closest('.navbar') && !e.target.closest('.nav-links')) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-        
-        // Prevent menu from staying open on resize
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 768) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-      }
-    </script>
-    
     <!-- Donation Tracker Script -->
     <script src="/src/wallet-api.js"></script>
     <script>
