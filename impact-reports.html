@@ -19,28 +19,21 @@
     <!-- Fixed Navigation -->
     <nav class="navbar">
       <div class="container">
-        <!-- Mobile menu button -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        
         <!-- Navigation links -->
         <div class="nav-links" id="nav-links">
-          <a href="/" class="nav-link">
+          <a href="/index.html" class="nav-link">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="/donation-tracker" class="nav-link">
+          <a href="/donation-tracker.html" class="nav-link">
             <i class="fas fa-donate"></i>
             <span>Donation Tracker</span>
           </a>
-          <a href="/leaderboard" class="nav-link">
+          <a href="/leaderboard.html" class="nav-link">
             <i class="fas fa-chart-bar"></i>
             <span>Leaderboard</span>
           </a>
-          <a href="/impact-reports" class="nav-link active">
+          <a href="/impact-reports.html" class="nav-link active">
             <i class="fas fa-heart"></i>
             <span>Impact Reports</span>
           </a>
@@ -398,9 +391,9 @@
             <div class="footer-section">
               <h4>Community</h4>
               <ul>
-                <li><a href="/donation-tracker">Donation Tracker</a></li>
-                <li><a href="/leaderboard">Leaderboard</a></li>
-                <li><a href="/impact-reports">Impact Reports</a></li>
+                <li><a href="/top-donators.html">Top Donators</a></li>
+                <li><a href="/leaderboard.html">Leaderboard</a></li>
+                <li><a href="/impact-reports.html">Impact Reports</a></li>
               </ul>
             </div>
           </div>
@@ -418,50 +411,6 @@
     
     <!-- Mobile Menu Script -->
     <script>
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const navLinks = document.getElementById('nav-links');
-      
-      if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          navLinks.classList.toggle('mobile-open');
-          mobileMenuBtn.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-          if (!e.target.closest('.navbar') && !e.target.closest('.nav-links')) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-        
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-        
-        // Prevent menu from staying open on resize
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 768) {
-            navLinks.classList.remove('mobile-open');
-            mobileMenuBtn.classList.remove('active');
-          }
-        });
-      }
     </script>
   </body>
 </html>

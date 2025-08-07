@@ -1,7 +1,0 @@
-# Redirect rules for clean URLs
-/leaderboard /leaderboard.html 200
-/donation-tracker /donation-tracker.html 200
-/impact-reports /impact-reports.html 200
-
-# Fallback for SPA-like behavior (optional)
-/* /index.html 200
