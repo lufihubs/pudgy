@@ -1,0 +1,15 @@
+# Netlify redirects for multi-page static site
+# Redirect clean URLs to their proper HTML files
+/donation-tracker    /donation-tracker.html    200
+/leaderboard         /leaderboard.html         200
+/impact-reports      /impact-reports.html      200
+/index               /index.html               200
+
+# Redirect .html URLs to clean URLs (for SEO)
+/donation-tracker.html    /donation-tracker    301
+/leaderboard.html         /leaderboard         301
+/impact-reports.html      /impact-reports      301
+/index.html               /                    301
+
+# Fallback for any other routes - redirect to home
+/*                   /index.html               404

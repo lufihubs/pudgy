@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+  command = "npm run build"
+
+[[redirects]]
+  from = "/donation-tracker"
+  to = "/donation-tracker.html"
+  status = 200
+
+[[redirects]]
+  from = "/leaderboard"
+  to = "/leaderboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/impact-reports"
+  to = "/impact-reports.html"
+  status = 200
+
+[[redirects]]
+  from = "/index"
+  to = "/index.html"
+  status = 200
+
+# Fallback for any other routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
