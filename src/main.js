@@ -278,4 +278,72 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   enhanceButtons();
+
+  // Mobile Navigation Toggle Functionality
+  const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+  const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+  const body = document.body;
+
+  if (mobileNavToggle && mobileNavOverlay) {
+    mobileNavToggle.addEventListener('click', () => {
+      const isOpen = mobileNavToggle.classList.contains('open');
+      
+      if (isOpen) {
+        // Close menu
+        mobileNavToggle.classList.remove('open');
+        mobileNavOverlay.classList.remove('open');
+        body.style.overflow = 'auto';
+      } else {
+        // Open menu
+        mobileNavToggle.classList.add('open');
+        mobileNavOverlay.classList.add('open');
+        body.style.overflow = 'hidden';
+      }
+    });
+
+    // Close menu when clicking on overlay background
+    mobileNavOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileNavOverlay) {
+        mobileNavToggle.classList.remove('open');
+        mobileNavOverlay.classList.remove('open');
+        body.style.overflow = 'auto';
+      }
+    });
+
+    // Close menu when clicking on navigation links
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavToggle.classList.remove('open');
+        mobileNavOverlay.classList.remove('open');
+        body.style.overflow = 'auto';
+      });
+    });
+
+    // Close menu when pressing escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNavToggle.classList.contains('open')) {
+        mobileNavToggle.classList.remove('open');
+        mobileNavOverlay.classList.remove('open');
+        body.style.overflow = 'auto';
+      }
+    });
+  }
+
+  // Update active navigation states
+  const updateActiveNav = () => {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  // Call on page load
+  updateActiveNav();
 });
