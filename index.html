@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/style.css?v=1.0.7">
+    <link rel="stylesheet" href="./src/style.css?v=1.0.8">
   </head>
   <body>
     <!-- Fixed Navigation -->
@@ -28,19 +28,19 @@
         
         <!-- Navigation links -->
         <div class="nav-links" id="nav-links">
-          <a href="index.html" class="nav-link active" onclick="return navigateToPage(event, 'index.html')">
+          <a href="index.html" class="nav-link active" onclick="return navigateToPage(event, 'index.html')" data-page="index.html">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="donation-tracker.html" class="nav-link" onclick="return navigateToPage(event, 'donation-tracker.html')">
+          <a href="donation-tracker.html" class="nav-link" onclick="return navigateToPage(event, 'donation-tracker.html')" data-page="donation-tracker.html">
             <i class="fas fa-donate"></i>
             <span>Donation Tracker</span>
           </a>
-          <a href="leaderboard.html" class="nav-link" onclick="return navigateToPage(event, 'leaderboard.html')">
+          <a href="leaderboard.html" class="nav-link" onclick="return navigateToPage(event, 'leaderboard.html')" data-page="leaderboard.html">
             <i class="fas fa-chart-bar"></i>
             <span>Leaderboard</span>
           </a>
-          <a href="impact-reports.html" class="nav-link" onclick="return navigateToPage(event, 'impact-reports.html')">
+          <a href="impact-reports.html" class="nav-link" onclick="return navigateToPage(event, 'impact-reports.html')" data-page="impact-reports.html">
             <i class="fas fa-heart"></i>
             <span>Impact Reports</span>
           </a>
@@ -546,7 +546,7 @@
     </footer>
 
     <script type="module" src="./src/main.js"></script>
-    <script src="./static-nav.js"></script>
+    <script src="./enhanced-navigation.js"></script>
     
     <!-- Mobile Menu Script -->
     <script>
@@ -594,6 +594,51 @@
           }
         });
       }
+      
+      // Enhanced navigation fallback system
+      function enhancedNavigate(url) {
+        const methods = [
+          () => window.location.assign(url),
+          () => window.location.replace(url),
+          () => window.location.href = url,
+          () => document.location.href = url,
+          () => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.target = '_self';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          },
+          () => window.open(url, '_self'),
+          () => {
+            const form = document.createElement('form');
+            form.method = 'GET';
+            form.action = url;
+            document.body.appendChild(form);
+            form.submit();
+          }
+        ];
+        
+        methods.forEach((method, index) => {
+          setTimeout(() => {
+            try {
+              method();
+            } catch (e) {
+              console.log(`Navigation method ${index + 1} failed:`, e);
+            }
+          }, index * 100);
+        });
+      }
+      
+      // Add enhanced click handlers to all navigation links
+      document.querySelectorAll('[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const url = link.getAttribute('data-page');
+          enhancedNavigate(url);
+        });
+      });
     </script>
   </body>
 </html>
