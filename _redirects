@@ -4,4 +4,4 @@
 /impact-reports      /impact-reports.html      200
 
 # Fallback for any other routes
-/*                   /index.html               404
+/*                   /index.html               200
