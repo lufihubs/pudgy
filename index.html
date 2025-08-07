@@ -6,14 +6,14 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="icon" type="image/svg+xml" href="./public/coin-icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>$PUDGY - The Next Big Memecoin</title>
     <meta name="description" content="$PUDGY is the hottest new memecoin on Base. Join the community and ride to the moon!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/style.css?v=1.0.3">
+    <link rel="stylesheet" href="./src/style.css?v=1.0.4">
   </head>
   <body>
     <!-- Fixed Navigation -->
@@ -554,6 +554,7 @@
       const navLinks = document.getElementById('nav-links');
       
       if (mobileMenuBtn && navLinks) {
+        // Enhanced touch support for mobile devices
         mobileMenuBtn.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -561,12 +562,24 @@
           mobileMenuBtn.classList.toggle('active');
         });
         
+        // Touch event for better mobile responsiveness
+        mobileMenuBtn.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }, { passive: false });
+        
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
           link.addEventListener('click', () => {
             navLinks.classList.remove('mobile-open');
             mobileMenuBtn.classList.remove('active');
           });
+          
+          // Touch support for nav links
+          link.addEventListener('touchstart', () => {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          }, { passive: true });
         });
         
         // Close menu when clicking outside
@@ -577,6 +590,14 @@
           }
         });
         
+        // Touch event for closing menu when touching outside
+        document.addEventListener('touchstart', (e) => {
+          if (!e.target.closest('.navbar') && !e.target.closest('.nav-links')) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          }
+        }, { passive: true });
+        
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
@@ -585,13 +606,34 @@
           }
         });
         
-        // Prevent menu from staying open on resize
+        // Prevent menu from staying open on resize - enhanced for all screen sizes
         window.addEventListener('resize', () => {
           if (window.innerWidth > 768) {
             navLinks.classList.remove('mobile-open');
             mobileMenuBtn.classList.remove('active');
           }
+          
+          // Ensure menu positioning is correct on very small screens
+          if (window.innerWidth <= 320) {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+              navbar.style.setProperty('--menu-width', '260px');
+            }
+          } else if (window.innerWidth <= 480) {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+              navbar.style.setProperty('--menu-width', '280px');
+            }
+          }
         });
+        
+        // Initial check for very small screens
+        if (window.innerWidth <= 320) {
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            navbar.style.setProperty('--menu-width', '260px');
+          }
+        }
       }
     </script>
   </body>
