@@ -1,18 +1,54 @@
-# Netlify redirects file - improved version
-# Handle direct navigation to HTML pages without extension
-/donation-tracker    /donation-tracker.html    200
-/leaderboard        /leaderboard.html         200
-/impact-reports     /impact-reports.html      200
+# Netlify redirects for $PUDGY memecoin site - Enhanced Version
 
-# Handle with extension as well
-/donation-tracker.html    /donation-tracker.html    200
-/leaderboard.html        /leaderboard.html         200
-/impact-reports.html     /impact-reports.html      200
+# Home page variations
+/home                    /index.html           200
+/home/                   /index.html           200
 
-# Handle case variations
-/Donation-Tracker    /donation-tracker.html    200
-/Leaderboard        /leaderboard.html         200
-/Impact-Reports     /impact-reports.html      200
+# Donation tracker redirects
+/donation-tracker        /donation-tracker.html  200
+/donation-tracker/       /donation-tracker.html  200
+/donate                  /donation-tracker.html  200
+/donate/                 /donation-tracker.html  200
+/tracker                 /donation-tracker.html  200
+/tracker/                /donation-tracker.html  200
 
-# Fallback for SPA routing
-/*    /index.html   200
+# Leaderboard redirects
+/leaderboard             /leaderboard.html      200
+/leaderboard/            /leaderboard.html      200
+/leaders                 /leaderboard.html      200
+/leaders/                /leaderboard.html      200
+/top                     /leaderboard.html      200
+/top/                    /leaderboard.html      200
+
+# Impact reports redirects  
+/impact-reports          /impact-reports.html   200
+/impact-reports/         /impact-reports.html   200
+/impact                  /impact-reports.html   200
+/impact/                 /impact-reports.html   200
+/reports                 /impact-reports.html   200
+/reports/                /impact-reports.html   200
+
+# Handle with .html extension
+/donation-tracker.html   /donation-tracker.html  200
+/leaderboard.html        /leaderboard.html      200
+/impact-reports.html     /impact-reports.html   200
+/index.html              /index.html           200
+
+# Case insensitive redirects
+/INDEX                   /index.html           200
+/INDEX.HTML              /index.html           200
+/DONATION-TRACKER        /donation-tracker.html  200
+/DONATION-TRACKER.HTML   /donation-tracker.html  200
+/Donation-Tracker        /donation-tracker.html  200
+/LEADERBOARD            /leaderboard.html      200
+/LEADERBOARD.HTML       /leaderboard.html      200
+/Leaderboard            /leaderboard.html      200
+/IMPACT-REPORTS         /impact-reports.html   200
+/IMPACT-REPORTS.HTML    /impact-reports.html   200
+/Impact-Reports         /impact-reports.html   200
+
+# Force HTTPS
+http://basedpudgy.netlify.app/*  https://basedpudgy.netlify.app/:splat  301!
+
+# Fallback for SPA routing - must be last
+/*                       /index.html           200

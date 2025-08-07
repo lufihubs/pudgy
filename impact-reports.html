@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/style.css?v=1.0.6">
+    <link rel="stylesheet" href="./src/style.css?v=1.0.7">
   </head>
   <body>
     <!-- Fixed Navigation -->
@@ -28,19 +28,19 @@
         
         <!-- Navigation links -->
         <div class="nav-links" id="nav-links">
-          <a href="index.html" class="nav-link">
+          <a href="index.html" class="nav-link" onclick="return navigateToPage(event, 'index.html')">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="donation-tracker.html" class="nav-link">
+          <a href="donation-tracker.html" class="nav-link" onclick="return navigateToPage(event, 'donation-tracker.html')">
             <i class="fas fa-donate"></i>
             <span>Donation Tracker</span>
           </a>
-          <a href="leaderboard.html" class="nav-link">
+          <a href="leaderboard.html" class="nav-link" onclick="return navigateToPage(event, 'leaderboard.html')">
             <i class="fas fa-chart-bar"></i>
             <span>Leaderboard</span>
           </a>
-          <a href="impact-reports.html" class="nav-link active">
+          <a href="impact-reports.html" class="nav-link active" onclick="return navigateToPage(event, 'impact-reports.html')">
             <i class="fas fa-heart"></i>
             <span>Impact Reports</span>
           </a>
@@ -415,6 +415,7 @@
     </footer>
 
     <script type="module" src="./src/main.js"></script>
+    <script src="./static-nav.js"></script>
     
     <!-- Mobile Menu Script -->
     <script>
