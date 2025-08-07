@@ -1,28 +1,36 @@
 [build]
   publish = "."
+  
+[build.processing]
+  skip_processing = false
 
 [[redirects]]
   from = "/donation-tracker"
   to = "/donation-tracker.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/leaderboard"
   to = "/leaderboard.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/impact-reports"
   to = "/impact-reports.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/index"
   to = "/index.html"
   status = 200
+  force = true
 
 # Fallback for any other routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true

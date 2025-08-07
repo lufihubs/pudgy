@@ -1,7 +1,4 @@
-# Netlify redirects for clean URLs
 /donation-tracker    /donation-tracker.html    200
-/leaderboard         /leaderboard.html         200
+/leaderboard         /leaderboard.html         200  
 /impact-reports      /impact-reports.html      200
-
-# Fallback for any other routes
 /*                   /index.html               200
