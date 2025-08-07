@@ -22,7 +22,7 @@ const WALLET_ADDRESS = '0x4C2ca9339ab05C79E92AcE815eBB8CFB36099081'; // ✅ Your
 1. Go to [https://basescan.org/apis](https://basescan.org/apis)
 2. Register for a free account
 3. Create a new API key
-4. Replace the placeholder in `wallet-viewer.html`:
+4. Replace the placeholder in `donation-tracker.html`:
 ```javascript
 const BASESCAN_API_KEY = 'YourBasescanAPIKey'; // Replace with your actual API key
 ```
