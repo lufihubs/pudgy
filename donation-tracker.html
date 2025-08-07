@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/src/style.css?v=1.0.1">
+    <link rel="stylesheet" href="/src/style.css?v=1.0.2">
     <style>
       /* Donation Tracker Specific Styles */
       .donation-tracker {
@@ -617,14 +617,22 @@
         });
         
         document.addEventListener('click', (e) => {
-          if (!e.target.closest('.navbar')) {
+          if (!e.target.closest('.navbar') && !e.target.closest('.nav-links')) {
             navLinks.classList.remove('mobile-open');
             mobileMenuBtn.classList.remove('active');
           }
         });
         
         document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
+          if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.classList.remove('active');
+          }
+        });
+        
+        // Prevent menu from staying open on resize
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
             navLinks.classList.remove('mobile-open');
             mobileMenuBtn.classList.remove('active');
           }

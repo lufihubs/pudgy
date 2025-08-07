@@ -801,19 +801,6 @@ section {
     padding: 0.8rem 0;
   }
   
-  .nav-links {
-    gap: 1.5rem;
-  }
-  
-  .nav-link {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .nav-link i {
-    font-size: 1.2rem;
-  }
-  
   .hero-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -2564,6 +2551,15 @@ body {
     height: 36px;
     font-size: 1.2rem;
     flex-shrink: 0;
+    /* Ensure no background for all mobile sizes */
+    background: none !important;
+    border-radius: 0 !important;
+  }
+  
+  .nav-link:hover i,
+  .nav-link.active i {
+    background: none !important;
+    transform: scale(1.05);
   }
   
   .nav-link span {
@@ -2572,5 +2568,20 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+/* Medium mobile devices */
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-link i {
+    /* Ensure no background for medium mobile devices */
+    background: none !important;
+    border-radius: 0 !important;
+  }
+  
+  .nav-link:hover i,
+  .nav-link.active i {
+    background: none !important;
+    transform: scale(1.05);
   }
 }
