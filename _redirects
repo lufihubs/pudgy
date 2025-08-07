@@ -1,8 +1,18 @@
-# Netlify redirects file
-# Handle direct navigation to HTML pages
+# Netlify redirects file - improved version
+# Handle direct navigation to HTML pages without extension
 /donation-tracker    /donation-tracker.html    200
 /leaderboard        /leaderboard.html         200
 /impact-reports     /impact-reports.html      200
 
-# Handle SPA routing fallback
+# Handle with extension as well
+/donation-tracker.html    /donation-tracker.html    200
+/leaderboard.html        /leaderboard.html         200
+/impact-reports.html     /impact-reports.html      200
+
+# Handle case variations
+/Donation-Tracker    /donation-tracker.html    200
+/Leaderboard        /leaderboard.html         200
+/Impact-Reports     /impact-reports.html      200
+
+# Fallback for SPA routing
 /*    /index.html   200
