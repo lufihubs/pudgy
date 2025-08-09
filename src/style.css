@@ -833,6 +833,21 @@ section {
     height: 250px;
   }
   
+  /* Mobile MrBeast Image */
+  .mrbeast-image {
+    position: absolute !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .mrbeast-image img {
+    height: 120px !important;
+    opacity: 1 !important;
+  }
+  
   .tokenomics-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -889,6 +904,28 @@ section {
   margin-top: 2rem;
 }
 
+/* MrBeast Image */
+.mrbeast-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mrbeast-image img {
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.first-mission:hover .mrbeast-image img {
+  opacity: 1;
+}
+
 /* Optimized Tokenomics Section - 100vh Layout */
 .tokenomics {
   min-height: 100vh;
@@ -909,8 +946,8 @@ section {
 .tokenomics::before {
   content: '';
   position: absolute;
-  top: 20%;
-  left: 15%;
+  top: 25%;
+  left: 8%;
   width: 150px;
   height: 150px;
   background: url('/token.png') no-repeat center;
@@ -919,11 +956,13 @@ section {
   pointer-events: none;
 }
 
-/* Make token smaller on mobile */
+/* Make token smaller and repositioned on mobile */
 @media (max-width: 768px) {
   .tokenomics::before {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    left: 5%;
   }
 }
 
