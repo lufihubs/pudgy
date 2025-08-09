@@ -1,3 +1,12 @@
+/* Custom Font */
+@font-face {
+  font-family: 'Moochi Jelly';
+  src: url('../Moochi Jelly.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -10,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   line-height: 1.6;
   color: #fbf4e7;
   background: #0352f9;
@@ -96,12 +105,15 @@ body {
 
 .ticker {
   display: block;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 4rem;
-  font-weight: 900;
+  font-weight: 400;
   color: #fbf4e7;
   filter: drop-shadow(3px 3px 0px #000000);
   animation: glow 3s ease-in-out infinite alternate;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  transform: perspective(500px) rotateX(5deg);
 }
 
 .subtitle {
@@ -133,7 +145,7 @@ body {
 
 .hero-stats .stat-number {
   display: block;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 2rem;
   font-weight: 800;
   color: white;
@@ -159,7 +171,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -167,6 +179,9 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 0px #000000;
+  font-family: 'Comfortaa', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -175,8 +190,9 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 7px 7px 0px #000000;
+  animation: bounce 0.6s ease-in-out;
 }
 
 .btn-secondary {
@@ -327,12 +343,21 @@ section {
 }
 
 .section-header h2 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 3rem;
   font-weight: 800;
   color: #fbf4e7;
   margin-bottom: 1rem;
   filter: drop-shadow(2px 2px 0px #000000);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: perspective(500px) rotateX(5deg);
+  transition: all 0.3s ease;
+}
+
+.section-header h2:hover {
+  transform: perspective(500px) rotateX(5deg) scale(1.1);
+  animation: wiggle 0.8s ease-in-out;
 }
 
 .section-header p {
@@ -419,7 +444,7 @@ section {
 }
 
 .about-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.5rem;
   font-weight: 700;
   color: #0352f9;
@@ -500,7 +525,7 @@ section {
 .detail-value {
   color: #0352f9;
   font-weight: 700;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.2));
 }
 
@@ -543,7 +568,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.5rem;
   font-weight: 800;
   color: white;
@@ -552,7 +577,7 @@ section {
 }
 
 .step-content h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.2rem;
   font-weight: 700;
   color: #0352f9;
@@ -603,7 +628,7 @@ section {
 }
 
 .footer-logo span {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.5rem;
   font-weight: 800;
   color: #fbf4e7;
@@ -691,6 +716,24 @@ section {
   50% {
     transform: scale(1.05);
   }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-2px) scale(1.05); }
+  25% { transform: translateY(-8px) scale(1.1); }
+  50% { transform: translateY(-4px) scale(1.08); }
+  75% { transform: translateY(-6px) scale(1.09); }
+  100% { transform: translateY(-2px) scale(1.05); }
+}
+
+@keyframes wiggle {
+  0% { transform: perspective(500px) rotateX(5deg) rotate(0deg); }
+  15% { transform: perspective(500px) rotateX(5deg) rotate(-5deg); }
+  30% { transform: perspective(500px) rotateX(5deg) rotate(5deg); }
+  45% { transform: perspective(500px) rotateX(5deg) rotate(-3deg); }
+  60% { transform: perspective(500px) rotateX(5deg) rotate(3deg); }
+  75% { transform: perspective(500px) rotateX(5deg) rotate(-1deg); }
+  100% { transform: perspective(500px) rotateX(5deg) rotate(0deg); }
 }
 
 /* Enhanced Scroll Animations - DISABLED */
@@ -790,21 +833,6 @@ section {
     height: 250px;
   }
   
-  /* Mobile MrBeast Image */
-  .mrbeast-image {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  .mrbeast-image img {
-    height: 200px;
-    opacity: 0.6;
-  }
-  
   .tokenomics-container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -859,28 +887,6 @@ section {
 
 .mission-button {
   margin-top: 2rem;
-}
-
-/* MrBeast Image */
-.mrbeast-image {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.mrbeast-image img {
-  height: 400px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.first-mission:hover .mrbeast-image img {
-  opacity: 1;
 }
 
 /* Optimized Tokenomics Section - 100vh Layout */
@@ -965,7 +971,7 @@ section {
 }
 
 .metric-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 0.9rem;
   font-weight: 700;
   color: #0352f9;
@@ -1000,7 +1006,7 @@ section {
 }
 
 .distribution-header h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 0.95rem;
   font-weight: 700;
   color: #fbf4e7;
@@ -1085,7 +1091,7 @@ section {
 .percentage {
   position: relative;
   z-index: 2;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-weight: 700;
   color: #fbf4e7;
   font-size: 0.5rem;
@@ -1099,7 +1105,7 @@ section {
 }
 
 .distribution-info h4 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 0.6rem;
   font-weight: 700;
   color: #0352f9;
@@ -1139,7 +1145,7 @@ section {
 }
 
 .security-header h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.6rem;
   font-weight: 700;
   color: #fbf4e7;
@@ -1179,7 +1185,7 @@ section {
 }
 
 .security-item h4 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1rem;
   font-weight: 700;
   color: #0352f9;
@@ -1340,7 +1346,7 @@ section {
 }
 
 .roadmap-item h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 1.5rem;
   font-weight: 700;
   color: #0352f9;
@@ -1526,7 +1532,7 @@ section {
 
 .impact-stat .stat-number {
   display: block;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 2.5rem;
   font-weight: 700;
   color: #0352f9;
@@ -1875,7 +1881,7 @@ section {
 }
 
 .mobile-nav-link span {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-weight: 700;
 }
 
@@ -1926,7 +1932,7 @@ section {
   }
   
   .nav-brand span {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Moochi Jelly', cursive;
     font-size: 1.2rem;
     font-weight: 800;
     color: #fbf4e7;
@@ -1979,7 +1985,7 @@ section {
 }
 
 .page-hero-content h1 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-size: 3.5rem;
   font-weight: 900;
   color: #fbf4e7;
@@ -2025,7 +2031,7 @@ section {
 }
 
 .podium-rank span {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   font-weight: 700;
   color: #fbf4e7;
 }
@@ -2052,7 +2058,7 @@ section {
 }
 
 .podium-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #0352f9;
   margin-bottom: 1rem;
 }
@@ -2087,7 +2093,7 @@ section {
 }
 
 .list-header h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #fbf4e7;
   font-size: 2rem;
 }
@@ -2166,7 +2172,7 @@ section {
 }
 
 .hero-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #0352f9;
   margin-bottom: 1rem;
 }
@@ -2317,7 +2323,7 @@ section {
 }
 
 .mvp-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #0352f9;
   margin-bottom: 0.5rem;
 }
@@ -2376,7 +2382,7 @@ section {
   font-size: 2.5rem;
   font-weight: 900;
   color: #0352f9;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
 }
 
 .metric-label {
@@ -2441,7 +2447,7 @@ section {
 }
 
 .report-content h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #0352f9;
   margin-bottom: 1rem;
 }
@@ -2545,7 +2551,7 @@ section {
 }
 
 .transparency-card h3 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #0352f9;
   margin-bottom: 1rem;
 }
@@ -2568,7 +2574,7 @@ section {
 }
 
 .cta-text h2 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Moochi Jelly', cursive;
   color: #fbf4e7;
   font-size: 2.5rem;
   margin-bottom: 1rem;
