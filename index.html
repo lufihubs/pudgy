@@ -102,15 +102,15 @@
           </div>
           
           <div class="hero-buttons">
-            <a href="#" class="btn btn-primary btn-small">
+            <a href="https://app.uniswap.org/#/swap?outputCurrency=0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="btn btn-primary btn-small">
               <i class="fas fa-coins"></i>
               <span>BUY $PUDGY</span>
             </a>
-            <a href="#" class="btn btn-secondary btn-small">
+            <a href="https://dexscreener.com/base/0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="btn btn-secondary btn-small">
               <i class="fas fa-chart-line"></i>
               <span>VIEW CHART</span>
             </a>
-            <a href="#" class="btn btn-secondary btn-small">
+            <a href="#token-info" class="btn btn-secondary btn-small">
               <i class="fas fa-info-circle"></i>
               <span>TOKEN INFO</span>
             </a>
@@ -346,6 +346,44 @@
       </div>
     </section>
 
+    <!-- Token Information Section -->
+    <section class="token-info" id="token-info">
+      <div class="container">
+        <div class="section-header">
+          <h2>TOKEN INFORMATION</h2>
+          <p>All the details you need about $PUDGY</p>
+        </div>
+        
+        <div class="token-details">
+          <div class="token-card">
+            <h3>Contract Address</h3>
+            <div class="contract-address">
+              <span class="address-text">0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B</span>
+              <button class="copy-btn" onclick="copyToClipboard('0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B')">
+                <i class="fas fa-copy"></i>
+                Copy
+              </button>
+            </div>
+          </div>
+          
+          <div class="token-links">
+            <a href="https://app.uniswap.org/swap?outputCurrency=0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="token-link">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Buy on Uniswap</span>
+            </a>
+            <a href="https://dexscreener.com/base/0xbf1dc1c7107796ce88943b97ff83bd885c64cf2c8a0dc3f91a98971062b18681" target="_blank" class="token-link">
+              <i class="fas fa-chart-line"></i>
+              <span>View Chart</span>
+            </a>
+            <a href="https://basescan.org/token/0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="token-link">
+              <i class="fas fa-search"></i>
+              <span>View on BaseScan</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Roadmap Section -->
     <section class="roadmap">
       <div class="container">
@@ -362,31 +400,32 @@
         <div class="roadmap-content" id="roadmap-text">
           <div class="roadmap-item">
             <div class="roadmap-phase">PHASE 1</div>
-            <h3>Launch & Community Building</h3>
+            <h3>Ignition</h3>
             <ul>
               <li>Fair launch on Base</li>
-              <li>Build active community</li>
-              <li>First MrBeast donation</li>
+              <li>Establish culture + core community</li>
+              <li>Drop NFT collection</li>
             </ul>
           </div>
           
           <div class="roadmap-item">
             <div class="roadmap-phase">PHASE 2</div>
-            <h3>Partnerships & Growth</h3>
+            <h3>Expansion</h3>
             <ul>
-              <li>Major exchange listings</li>
-              <li>Influencer partnerships</li>
-              <li>Clean water campaigns</li>
+              <li>Launch donation campaign</li>
+              <li>Secure major exchange presence</li>
+              <li>Grow ecosystem + forge key partnerships</li>
+              <li>Push narrative across chains</li>
             </ul>
           </div>
           
           <div class="roadmap-item">
             <div class="roadmap-phase">PHASE 3</div>
-            <h3>Impact & Legacy</h3>
+            <h3>Legacy</h3>
             <ul>
-              <li>1000+ wells built</li>
-              <li>Global recognition</li>
-              <li>Memecoin with a mission</li>
+              <li>Cement position as top meme on Base</li>
+              <li>Gain recognition beyond Base</li>
+              <li>Build lasting impact + identity</li>
             </ul>
           </div>
         </div>
@@ -517,7 +556,7 @@
         </div>
         
         <div class="buy-button-container">
-          <a href="#" class="btn btn-primary btn-large">
+          <a href="https://app.uniswap.org/#/swap?outputCurrency=0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="btn btn-primary btn-large">
             <i class="fas fa-exchange-alt"></i>
             <span>BUY ON UNISWAP</span>
           </a>
@@ -581,5 +620,41 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script>
+      // Copy to clipboard function
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function() {
+          // Show feedback
+          const btn = event.target.closest('.copy-btn');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.style.background = '#4CAF50';
+          
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Could not copy text: ', err);
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          
+          const btn = event.target.closest('.copy-btn');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.style.background = '#4CAF50';
+          
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+          }, 2000);
+        });
+      }
+    </script>
   </body>
 </html>
