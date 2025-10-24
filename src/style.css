@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -38,10 +39,11 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background: #0352f9 url('/backg.jpg');
+  background: #0352f9 url('/ice.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  padding-top: 120px;
 }
 
 .hero::before {
@@ -141,6 +143,18 @@ body {
 
 .stat {
   text-align: center;
+  background: rgba(251, 244, 231, 0.15);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 3px solid rgba(251, 244, 231, 0.3);
+  backdrop-filter: blur(15px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5), 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.7), 0 7px 25px rgba(0, 0, 0, 0.3);
 }
 
 .hero-stats .stat-number {
@@ -178,10 +192,11 @@ body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 5px 5px 0px #000000;
-  font-family: 'Comfortaa', sans-serif;
+  box-shadow: 6px 6px 0px #000000, 0 6px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Moochi Jelly', cursive;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border: 3px solid #000000;
 }
 
 .btn-primary {
@@ -190,21 +205,22 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 7px 7px 0px #000000;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 8px 8px 0px #000000, 0 8px 25px rgba(0, 0, 0, 0.3);
   animation: bounce 0.6s ease-in-out;
 }
 
 .btn-secondary {
   background: #fbf4e7;
   color: #0352f9;
-  border: 2px solid #0352f9;
+  border: 3px solid #0352f9;
 }
 
 .btn-secondary:hover {
-  background: #fbf4e7;
-  transform: translateY(-2px);
-  box-shadow: 7px 7px 0px #000000;
+  background: #0352f9;
+  color: #fbf4e7;
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0px #000000, 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-large {
@@ -240,21 +256,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: rgba(59, 130, 246, 0.1);
+  width: 60px;
+  height: 60px;
+  background: #fbf4e7;
   border-radius: 50%;
   transition: all 0.3s ease;
-  border: 2px solid rgba(59, 130, 246, 0.3);
+  border: 3px solid #0352f9;
   text-decoration: none;
-  color: white;
-  box-shadow: 3px 3px 0px #000000;
+  color: #0352f9;
+  box-shadow: 5px 5px 0px #000000, 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .social-btn:hover {
-  background: rgba(59, 130, 246, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #000000, 0 5px 15px rgba(59, 130, 246, 0.4);
+  background: #0352f9;
+  color: #fbf4e7;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 7px 7px 0px #000000, 0 7px 25px rgba(0, 0, 0, 0.3);
 }
 
 .social-btn img {
@@ -455,6 +472,68 @@ section {
 .about-card p {
   color: #000000;
   line-height: 1.6;
+}
+
+/* Lore Section Styling */
+.lore-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lore-story {
+  background: rgba(251, 244, 231, 0.1);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 3px solid rgba(251, 244, 231, 0.3);
+  backdrop-filter: blur(15px);
+  box-shadow: 10px 10px 0px #000000, 0 10px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.lore-story:hover {
+  transform: translateY(-2px);
+  box-shadow: 12px 12px 0px #000000, 0 12px 45px rgba(0, 0, 0, 0.3);
+}
+
+.lore-text {
+  font-family: 'Moochi Jelly', cursive;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #fbf4e7;
+  margin: 1rem 0;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.lore-text.highlight {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+  margin: 1.5rem 0;
+}
+
+.lore-motto {
+  font-family: 'Moochi Jelly', cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: linear-gradient(45deg, rgba(251, 244, 231, 0.2), rgba(251, 244, 231, 0.1));
+  border-radius: 15px;
+  border: 2px solid rgba(251, 244, 231, 0.3);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.6);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(251, 244, 231, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(251, 244, 231, 0.5);
+  }
 }
 
 /* Tokenomics Section */
@@ -784,10 +863,16 @@ section {
 
 /* Mobile responsive styles for hero and general layout */
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 0;
+    min-height: 100vh;
+  }
+  
   .hero-container {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
     text-align: center !important;
+    padding: 0 15px;
   }
   
   .hero-content {
@@ -833,6 +918,23 @@ section {
     height: 250px;
   }
   
+  /* Mobile Container and Section Spacing */
+  .container {
+    padding: 0 15px;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .section-header p {
+    font-size: 0.9rem;
+  }
+  
   /* Mobile MrBeast Image */
   .mrbeast-image {
     position: absolute !important;
@@ -864,6 +966,76 @@ section {
     text-align: center;
   }
   
+  /* Mobile Lore Section */
+  .lore-story {
+    padding: 2rem;
+    margin: 0 10px;
+  }
+  
+  .lore-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .lore-text.highlight {
+    font-size: 1.3rem;
+  }
+  
+  .lore-motto {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+  
+  /* Mobile Tokenomics */
+  .tokenomics-left {
+    order: 2;
+  }
+  
+  .tokenomics-right {
+    order: 1;
+  }
+  
+  .tokenomics-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .metric-card {
+    padding: 1rem;
+  }
+  
+  .metric-card h3 {
+    font-size: 1rem;
+  }
+  
+  .metric-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile Steps */
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .step {
+    padding: 1.5rem;
+  }
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .step-content p {
+    font-size: 0.9rem;
+  }
+  
   .footer-info {
     text-align: center;
   }
@@ -871,6 +1043,94 @@ section {
   .step {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 0;
+  }
+  
+  .hero-container {
+    padding: 0 10px;
+    gap: 1.5rem;
+  }
+  
+  .ticker {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat {
+    padding: 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .btn-small {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .main-logo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .lore-story {
+    padding: 1.5rem;
+    margin: 0 5px;
+  }
+  
+  .lore-text {
+    font-size: 1rem;
+  }
+  
+  .lore-text.highlight {
+    font-size: 1.2rem;
+  }
+  
+  .lore-motto {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+  }
+  
+  .tokenomics-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-btn {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -2036,70 +2296,80 @@ section {
   }
 }
 
-/* Navigation Styles */
-.navbar {
+/* Floating Navigation Styles */
+.floating-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  z-index: 1000;
-  padding: 1rem 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
   transition: all 0.3s ease;
+  width: auto;
+  max-width: calc(100vw - 40px);
 }
 
-.navbar .container {
+.nav-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  height: 70px;
+  gap: 2rem;
+  background: rgba(251, 244, 231, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  padding: 12px 24px;
+  border: 3px solid #0352f9;
+  box-shadow: 8px 8px 0px #000000, 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .nav-brand {
-  display: none;
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  font-family: 'Moochi Jelly', cursive;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0352f9;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+  margin-right: 1rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .nav-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 55px;
-  height: 55px;
-  color: #fbf4e7;
+  padding: 8px 12px;
+  min-width: 60px;
+  color: #0352f9;
   text-decoration: none;
   transition: all 0.3s ease;
-  border-radius: 50%;
-  background: rgba(3, 82, 249, 0.8);
-  border: 2px solid rgba(251, 244, 231, 0.6);
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid transparent;
   position: relative;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  background: #fbf4e7;
-  color: #0352f9;
-  transform: translateY(-4px) scale(1.05);
+  background: #0352f9;
+  color: #fbf4e7;
+  transform: translateY(-2px);
   border-color: #0352f9;
-  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 0px #000000, 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link i {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 2px;
 }
 
 .nav-link:hover i {
@@ -2107,7 +2377,10 @@ section {
 }
 
 .nav-link span {
-  display: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Mobile Navigation */
@@ -2255,94 +2528,74 @@ section {
 }
 
 /* Mobile Responsive Navigation */
-@media (max-width: 768px) {
-  .navbar {
-    background: rgba(3, 82, 249, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(251, 244, 231, 0.1);
-    padding: 0.8rem 0;
+@media (max-width: 968px) {
+  .floating-nav {
+    top: 10px;
   }
   
-  .navbar .container {
-    height: 60px;
+  .nav-container {
+    gap: 1rem;
+    padding: 10px 16px;
+  }
+  
+  .brand-name {
+    font-size: 1.4rem;
   }
   
   .nav-links {
-    display: none;
+    gap: 0.3rem;
   }
   
-  .mobile-nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .nav-link {
+    min-width: 45px;
+    padding: 6px 8px;
   }
   
-  .mobile-nav-overlay {
-    display: block;
-  }
-  
-  /* Show brand on mobile */
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    position: absolute;
-    left: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1003;
-  }
-  
-  .nav-brand img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 2px solid rgba(251, 244, 231, 0.6);
-  }
-  
-  .nav-brand span {
-    font-family: 'Moochi Jelly', cursive;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #fbf4e7;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Ensure proper spacing for mobile hero */
-  .hero {
-    padding-top: 100px;
-  }
-  
-  .page-hero {
-    padding: 120px 0 80px;
-  }
-}
-
-/* Additional mobile fixes */
-@media (max-width: 480px) {
-  .mobile-nav-toggle {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .burger-icon {
-    width: 20px;
-    height: 16px;
-  }
-  
-  .nav-brand span {
+  .nav-link i {
     font-size: 1rem;
   }
   
-  .nav-brand img {
-    width: 30px;
-    height: 30px;
+  .nav-link span {
+    font-size: 0.6rem;
   }
-  
-  .mobile-nav-link {
-    font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-    min-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-nav {
+    display: none;
+  }
+}
+
+/* Legacy Navigation - Hidden */
+.navbar {
+  display: none;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.mobile-nav-overlay {
+  display: none;
+}
+
+/* Additional Mobile Navigation Fixes */
+@media (max-width: 360px) {
+  .floating-nav {
+    display: none;
+  }
+}
+
+/* Ensure proper scroll behavior */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 0;
   }
 }
 

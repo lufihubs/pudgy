@@ -7,8 +7,8 @@
     <meta http-equiv="Expires" content="0" />
     <link rel="icon" type="image/svg+xml" href="/main.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>$PUDGY - The Next Big Memecoin</title>
-    <meta name="description" content="$PUDGY is the hottest new memecoin on Base. Join the community and ride to the moon!">
+    <title>$NOKI - The Next Big Memecoin</title>
+    <meta name="description" content="$NOKI is the hottest new memecoin on Base. Join the community and ride to the moon!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,37 +16,34 @@
     <link rel="stylesheet" href="/src/style.css?v=1.0.2">
   </head>
   <body>
-    <!-- Fixed Navigation -->
-    <nav class="navbar">
-      <div class="container">
-        <!-- Navigation links -->
+    <!-- Floating Fixed Navigation -->
+    <nav class="floating-nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="brand-name">$NOKI</span>
+        </div>
         <div class="nav-links" id="nav-links">
-          <a href="/" class="nav-link active">
+          <a href="#home" class="nav-link active">
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="/donation-tracker" class="nav-link">
-            <i class="fas fa-donate"></i>
-            <span>Donation Tracker</span>
+          <a href="#about" class="nav-link">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
           </a>
-          <a href="/leaderboard" class="nav-link">
-            <i class="fas fa-chart-bar"></i>
-            <span>Leaderboard</span>
+          <a href="#tokenomics" class="nav-link">
+            <i class="fas fa-coins"></i>
+            <span>Token</span>
           </a>
-          <a href="/impact-reports" class="nav-link">
-            <i class="fas fa-heart"></i>
-            <span>Impact Reports</span>
+          <a href="#token-info" class="nav-link">
+            <i class="fas fa-chart-line"></i>
+            <span>Info</span>
+          </a>
+          <a href="#how-to-buy" class="nav-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Buy</span>
           </a>
         </div>
-        
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle">
-          <div class="burger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
       </div>
     </nav>
 
@@ -57,33 +54,21 @@
           <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
-        <a href="/donation-tracker" class="mobile-nav-link">
-          <i class="fas fa-donate"></i>
-          <span>Donation Tracker</span>
-        </a>
-        <a href="/leaderboard" class="mobile-nav-link">
-          <i class="fas fa-chart-bar"></i>
-          <span>Leaderboard</span>
-        </a>
-        <a href="/impact-reports" class="mobile-nav-link">
-          <i class="fas fa-heart"></i>
-          <span>Impact Reports</span>
-        </a>
       </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="hero-container">
         <!-- Left Side - Main Content -->
         <div class="hero-content">
           <h1 class="hero-title">
-            <span class="ticker">$PUDGY</span>
+            <span class="ticker">$NOKI</span>
             <span class="subtitle">THE CUTEST COIN ON BASE</span>
           </h1>
           
           <p class="hero-description">
-            Join the $PUDGY revolution! The most adorable memecoin that's taking the crypto world by storm. Built on Base with zero taxes and maximum fun!
+            A penguin was posted by Coinbase and cracked the ice. Inspired by that, NOKI was born. You don't hold NOKI, you follow him. NOKI leads, we follow.
           </p>
           
           <div class="hero-stats">
@@ -104,7 +89,7 @@
           <div class="hero-buttons">
             <a href="https://app.uniswap.org/#/swap?outputCurrency=0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="btn btn-primary btn-small">
               <i class="fas fa-coins"></i>
-              <span>BUY $PUDGY</span>
+              <span>BUY $NOKI</span>
             </a>
             <a href="https://dexscreener.com/base/0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B" target="_blank" class="btn btn-secondary btn-small">
               <i class="fas fa-chart-line"></i>
@@ -113,10 +98,6 @@
             <a href="#token-info" class="btn btn-secondary btn-small">
               <i class="fas fa-info-circle"></i>
               <span>TOKEN INFO</span>
-            </a>
-            <a href="donation-tracker.html" class="btn btn-primary btn-small">
-              <i class="fas fa-tint"></i>
-              <span>DONATE</span>
             </a>
           </div>
           
@@ -133,78 +114,37 @@
         <!-- Right Side - Image/Visual -->
         <div class="hero-visual">
           <div class="coin-showcase">
-            <img src="/main.png" alt="$PUDGY Logo" class="main-logo">
+            <img src="/main.png" alt="$NOKI Logo" class="main-logo">
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- First Mission Section -->
-    <section class="first-mission">
-      <div class="container">
-        <div class="section-header">
-          <h2>FIRST MISSION: TEAM WATER x MRBEAST</h2>
-          <p>Making a real impact with meme money</p>
-        </div>
-        
-        <div class="mission-content">
-          <div class="mission-text">
-            <p>Our first goal: fund a massive donation to MrBeast's Team Water campaign and be under the top 10 donors.</p>
-            <p class="mission-warning">If he doesn't claim it by August 31, we burn it.</p>
-          </div>
-          
-          <div class="mission-button">
-            <a href="donation-tracker.html" class="btn btn-primary">
-              <span>VIEW DONATION TRACKER</span>
-            </a>
-          </div>
-        </div>
-        
-        <!-- MrBeast Image -->
-        <div class="mrbeast-image">
-          <img src="/mrbeast.PNG" alt="MrBeast" />
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="section-header">
-          <h2>ABOUT $PUDGY</h2>
-          <p>The most adorable memecoin ecosystem</p>
+          <h2>THE LEGEND OF NOKI</h2>
+          <p>Where ice meets inspiration</p>
         </div>
         
-        <div class="about-grid">
-          <div class="about-card">
-            <div class="card-icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
-            <h3>MISSION</h3>
-            <p>To create the most fun and engaging memecoin community while delivering massive gains to our holders.</p>
-          </div>
-          
-          <div class="about-card">
-            <div class="card-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3>SECURITY</h3>
-            <p>Contract is renounced, liquidity is burned, and we're fully doxxed. Your investment is safe with us.</p>
-          </div>
-          
-          <div class="about-card">
-            <div class="card-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>COMMUNITY</h3>
-            <p>Join thousands of $PUDGY holders in our vibrant community. Together we moon!</p>
+        <div class="lore-content">
+          <div class="lore-story">
+            <p class="lore-text">A penguin was posted by Coinbase and cracked the ice.</p>
+            <p class="lore-text">Inspired by that, NOKI was born.</p>
+            <p class="lore-text">One by one, the colony gathered—</p>
+            <p class="lore-text">Not because they understood,</p>
+            <p class="lore-text">But because they felt it.</p>
+            <p class="lore-text highlight">You don't hold NOKI,</p>
+            <p class="lore-text highlight">You follow him.</p>
+            <p class="lore-motto">NOKI leads, we follow.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Tokenomics Section -->
-    <section class="tokenomics">
+    <section class="tokenomics" id="tokenomics">
       <div class="container">
         <div class="section-header">
           <h2>TOKENOMICS</h2>
@@ -221,14 +161,14 @@
                   <i class="fas fa-coins"></i>
                 </div>
                 <h3>Total Supply</h3>
-                <p>1B $PUDGY</p>
+                <p>1B $NOKI</p>
               </div>
               <div class="metric-card">
                 <div class="metric-icon">
-                  <i class="fas fa-water"></i>
+                  <i class="fas fa-percentage"></i>
                 </div>
                 <h3>Trading Fee</h3>
-                <p>3% → Water Fund</p>
+                <p>0% Tax</p>
               </div>
               <div class="metric-card">
                 <div class="metric-icon">
@@ -282,8 +222,8 @@
                     <span class="percentage">10%</span>
                   </div>
                   <div class="distribution-info">
-                    <h4>MrBeast Water Fund</h4>
-                    <p>Dedicated fund for clean water initiatives - burns Aug 31 if unclaimed</p>
+                    <h4>Community Rewards</h4>
+                    <p>Reserved for community events, contests, and holder rewards</p>
                   </div>
                 </div>
                 
@@ -351,18 +291,14 @@
       <div class="container">
         <div class="section-header">
           <h2>TOKEN INFORMATION</h2>
-          <p>All the details you need about $PUDGY</p>
+          <p>All the details you need about $NOKI</p>
         </div>
         
         <div class="token-details">
           <div class="token-card">
             <h3>Contract Address</h3>
             <div class="contract-address">
-              <span class="address-text">0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B</span>
-              <button class="copy-btn" onclick="copyToClipboard('0x02CD9a29E9eEA3a4876c1A256C320E4BBa5F768B')">
-                <i class="fas fa-copy"></i>
-                Copy
-              </button>
+              <span class="address-text">Coming Soon</span>
             </div>
           </div>
           
@@ -384,132 +320,12 @@
       </div>
     </section>
 
-    <!-- Roadmap Section -->
-    <section class="roadmap">
-      <div class="container">
-        <div class="section-header">
-          <h2>ROADMAP</h2>
-          <p>The journey to the moon and beyond</p>
-        </div>
-        
-        <div class="roadmap-toggle">
-          <button class="toggle-btn active" data-view="text">Text View</button>
-          <button class="toggle-btn" data-view="image">Image View</button>
-        </div>
-        
-        <div class="roadmap-content" id="roadmap-text">
-          <div class="roadmap-item">
-            <div class="roadmap-phase">PHASE 1</div>
-            <h3>Ignition</h3>
-            <ul>
-              <li>Fair launch on Base</li>
-              <li>Establish culture + core community</li>
-              <li>Drop NFT collection</li>
-            </ul>
-          </div>
-          
-          <div class="roadmap-item">
-            <div class="roadmap-phase">PHASE 2</div>
-            <h3>Expansion</h3>
-            <ul>
-              <li>Launch donation campaign</li>
-              <li>Secure major exchange presence</li>
-              <li>Grow ecosystem + forge key partnerships</li>
-              <li>Push narrative across chains</li>
-            </ul>
-          </div>
-          
-          <div class="roadmap-item">
-            <div class="roadmap-phase">PHASE 3</div>
-            <h3>Legacy</h3>
-            <ul>
-              <li>Cement position as top meme on Base</li>
-              <li>Gain recognition beyond Base</li>
-              <li>Build lasting impact + identity</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="roadmap-content hidden" id="roadmap-image">
-          <div class="roadmap-visual">
-            <p> Interactive roadmap visualization coming soon!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Impact Tracker Section -->
-    <section class="impact-tracker">
-      <div class="container">
-        <div class="section-header">
-          <h2>$PUDGY BUILT THIS</h2>
-          <p>COOMING SOON...</p>
-        </div>
-        
-        <div class="impact-content">
-          <div class="map-container">
-            <div class="impact-map">
-              <div class="africa-map">
-                <img src="/map.png" alt="Africa Map" class="map-image">
-              </div>
-            </div>
-            
-            <div class="countries-list">
-              <h3>Target Countries</h3>
-              <ul class="country-items">
-                <li class="country-item">
-                  <img src="/logo.jpg" alt="Well" class="country-marker">
-                  <span class="country-name">Kenya</span>
-                  <span class="project-name">Water Project</span>
-                </li>
-                <li class="country-item">
-                  <img src="/logo.jpg" alt="Well" class="country-marker">
-                  <span class="country-name">Tanzania</span>
-                  <span class="project-name">Well Initiative</span>
-                </li>
-                <li class="country-item">
-                  <img src="/logo.jpg" alt="Well" class="country-marker">
-                  <span class="country-name">Ghana</span>
-                  <span class="project-name">Village Wells</span>
-                </li>
-                <li class="country-item">
-                  <img src="/logo.jpg" alt="Well" class="country-marker">
-                  <span class="country-name">Uganda</span>
-                  <span class="project-name">Clean Water</span>
-                </li>
-                <li class="country-item">
-                  <img src="/logo.jpg" alt="Well" class="country-marker">
-                  <span class="country-name">Ethiopia</span>
-                  <span class="project-name">Water Access</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="impact-stats">
-            <div class="impact-stat">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Wells Built</span>
-            </div>
-            <div class="impact-stat">
-              <span class="stat-number">$0</span>
-              <span class="stat-label">Donated</span>
-            </div>
-            <div class="impact-stat">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Lives Impacted</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- How to Buy Section -->
-    <section class="how-to-buy">
+    <section class="how-to-buy" id="how-to-buy">
       <div class="container">
         <div class="section-header">
-          <h2>HOW TO BUY $PUDGY</h2>
-          <p>Get your $PUDGY in 3 easy steps</p>
+          <h2>HOW TO BUY $NOKI</h2>
+          <p>Get your $NOKI in 3 easy steps</p>
         </div>
         
         <div class="steps-container">
@@ -532,8 +348,8 @@
           <div class="step">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>SWAP FOR $PUDGY</h3>
-              <p>Go to Uniswap and swap your ETH for $PUDGY tokens</p>
+              <h3>SWAP FOR $NOKI</h3>
+              <p>Go to Uniswap and swap your ETH for $NOKI tokens</p>
             </div>
           </div>
         </div>
@@ -553,8 +369,8 @@
         <div class="footer-content">
           <div class="footer-main">
             <div class="footer-logo">
-              <img src="/logo.jpg" alt="$PUDGY Logo">
-              <span>$PUDGY</span>
+              <img src="/logo.jpg" alt="$NOKI Logo">
+              <span>$NOKI</span>
             </div>
             
             <div class="footer-socials">
@@ -586,16 +402,16 @@
             <div class="footer-section">
               <h4>Community</h4>
               <ul>
-                <li><a href="/donation-tracker">Donation Tracker</a></li>
-                <li><a href="/leaderboard">Leaderboard</a></li>
-                <li><a href="/impact-reports">Impact Reports</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">Discord</a></li>
               </ul>
             </div>
           </div>
           
           <div class="footer-info">
-            <p>&copy; 2024 $PUDGY. All rights reserved.</p>
-            <p>Contract: 0x... (Coming Soon)</p>
+            <p>&copy; 2024 $NOKI. All rights reserved.</p>
+            <p>Contract: Coming Soon</p>
             <p class="disclaimer">This is a memecoin with a mission. Not financial advice.</p>
           </div>
         </div>
